@@ -1,0 +1,52 @@
+[
+  {
+    "id": "nucleus",
+    "path": "/images/nucleus.png",
+    "creator": "Servier Medical Art",
+    "sourceUrl": "https://smart.servier.com/smart_image/smart-nucleus-view/",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "changes": "ללא שינוי בתמונה",
+    "alt": "איור של גרעין התא"
+  },
+  {
+    "id": "rbc",
+    "path": "/images/rbc.png",
+    "creator": "Servier Medical Art",
+    "sourceUrl": "https://smart.servier.com/smart_image/erythrocyte-protein/",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "changes": "ללא שינוי בתמונה",
+    "alt": "איור של כדורית דם אדומה"
+  },
+  {
+    "id": "neuron",
+    "path": "/images/neuron.png",
+    "creator": "Servier Medical Art",
+    "sourceUrl": "https://smart.servier.com/smart_image/neuron-cell/",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "changes": "ללא שינוי בתמונה",
+    "alt": "איור של תא עצב ושלוחותיו"
+  },
+  {
+    "id": "mitochondria",
+    "path": "/images/mitochondria.png",
+    "creator": "Servier Medical Art",
+    "sourceUrl": "https://smart.servier.com/smart_image/smart-orange-mitochondria/",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "changes": "ללא שינוי בתמונה",
+    "alt": "איור של מיטוכונדריה"
+  },
+  {
+    "id": "adipocyte",
+    "path": "/images/adipocyte.png",
+    "creator": "Servier Medical Art",
+    "sourceUrl": "https://smart.servier.com/smart_image/adipocyte/",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "changes": "ללא שינוי בתמונה",
+    "alt": "איור של תא שומן"
+  }
+]

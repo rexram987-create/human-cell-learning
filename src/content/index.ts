@@ -1,0 +1,12 @@
+import lessonData from './lessons.json';
+import sourceData from './sources.json';
+import assetData from './assets.json';
+import categoryData from './categories.json';
+import glossaryData from './glossary.json';
+import type {Lesson,Source,Asset,Category,GlossaryTerm} from './types';
+export const lessons:Lesson[]=lessonData;
+export const sources:Source[]=sourceData;
+export const assets:Asset[]=assetData;
+export const categories:Category[]=categoryData;
+export const glossary:GlossaryTerm[]=glossaryData;
+export const findLesson=(id:string)=>lessons.find(l=>l.id===id);

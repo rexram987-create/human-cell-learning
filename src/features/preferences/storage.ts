@@ -1,0 +1,10 @@
+import {lessons} from '../../content';
+import {questions} from '../quiz/quiz';
+export type Progress={version:1;learnedIds:string[];wrongQuestionIds:string[];answers:Record<string,{correct:boolean}>;textScale:number;theme:'light'|'dark'|'system'};
+export const defaults:Progress={version:1,learnedIds:[],wrongQuestionIds:[],answers:{},textScale:1,theme:'system'};
+const key='human-cell-progress-v1';
+const fresh=():Progress=>({...defaults,learnedIds:[],wrongQuestionIds:[],answers:{}});
+export function loadProgress(storage:Storage|null):{data:Progress;available:boolean}{if(!storage)return {data:fresh(),available:false};try{const raw=storage.getItem(key);if(!raw)return {data:fresh(),available:true};let p;try{p=JSON.parse(raw)}catch{return {data:fresh(),available:true}}if(!p||p.version!==1)return {data:fresh(),available:true};const validLesson=new Set(lessons.map(l=>l.id)),validQuestion=new Set(questions.map(q=>q.id));const ids=(x:unknown,valid:Set<string>)=>Array.isArray(x)?[...new Set(x.filter((v):v is string=>typeof v==='string'&&valid.has(v)))]:[];const answers=Object.fromEntries(Object.entries(p.answers&&typeof p.answers==='object'?p.answers:{}).filter(([id,v])=>validQuestion.has(id)&&typeof (v as {correct?:unknown})?.correct==='boolean').map(([id,v])=>[id,{correct:(v as {correct:boolean}).correct}]));return {data:{version:1,learnedIds:ids(p.learnedIds,validLesson),wrongQuestionIds:ids(p.wrongQuestionIds,validQuestion),answers,textScale:typeof p.textScale==='number'&&p.textScale>=.9&&p.textScale<=1.4?p.textScale:1,theme:['light','dark','system'].includes(p.theme)?p.theme:'system'},available:true}}catch{return {data:fresh(),available:false}}}
+export function saveProgress(storage:Storage|null,data:Progress):boolean{try{if(!storage)return false;storage.setItem(key,JSON.stringify(data));return true}catch{return false}}
+export function resetProgress(storage:Storage|null):boolean{try{if(!storage)return false;storage.removeItem(key);return true}catch{return false}}
+export function getStorage():Storage|null{try{return window.localStorage}catch{return null}}

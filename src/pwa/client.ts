@@ -1,0 +1,14 @@
+type InstallEvent=Event & {prompt:()=>Promise<void>;userChoice:Promise<{outcome:string}>};
+let registration:ServiceWorkerRegistration|undefined;
+let started:Promise<void>|undefined;
+let deferred:InstallEvent|undefined;
+if(typeof window!=='undefined'){window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e as InstallEvent;window.dispatchEvent(new Event('cell-installable'))});window.addEventListener('appinstalled',()=>{deferred=undefined;window.dispatchEvent(new Event('cell-installed'))})}
+export function registerPwa():Promise<void>{if(started&&(!registration||registration.active||registration.installing||registration.waiting))return started;started=(async()=>{if(!('serviceWorker' in navigator))throw new Error('unsupported');registration=await navigator.serviceWorker.register('/sw.js',{type:'module'});const notify=()=>{if(registration?.waiting)window.dispatchEvent(new Event('cell-update-ready'))};notify();registration.addEventListener('updatefound',()=>registration?.installing?.addEventListener('statechange',notify));})().catch(error=>{started=undefined;throw error});return started}
+export function hasInstallPrompt(){return Boolean(deferred)}
+export async function promptInstall(){if(!deferred)return false;const event=deferred;await event.prompt();const choice=await event.userChoice;deferred=undefined;return choice.outcome==='accepted'}
+export function hasWaitingUpdate(){return Boolean(registration?.waiting)}
+export function applyUpdate(){const worker=registration?.waiting;if(!worker)return;const refresh=()=>{navigator.serviceWorker.removeEventListener('controllerchange',refresh);window.location.reload()};navigator.serviceWorker.addEventListener('controllerchange',refresh);worker.postMessage({type:'APPLY_UPDATE'})}
+function timed<T>(promise:Promise<T>,ms:number):Promise<T>{return new Promise((resolve,reject)=>{const t=setTimeout(()=>reject(new Error('timeout')),ms);promise.then(v=>{clearTimeout(t);resolve(v)},e=>{clearTimeout(t);reject(e)})})}
+async function message(type:string):Promise<{ready:boolean;error?:string}>{try{await registerPwa();const reg=await timed(navigator.serviceWorker.ready,25000);const worker=navigator.serviceWorker.controller||reg.active;if(!worker)throw new Error('inactive');return await new Promise(resolve=>{const ch=new MessageChannel();const timeout=setTimeout(()=>{ch.port1.close();resolve({ready:false,error:'השמירה לא הושלמה בזמן. אפשר לנסות שוב.'})},30000);ch.port1.onmessage=e=>{clearTimeout(timeout);ch.port1.close();resolve({ready:e.data?.ready===true,error:e.data?.error})};worker.postMessage({type},[ch.port2])})}catch{return {ready:false,error:'השימוש ללא אינטרנט עדיין אינו זמין. התחברו לאינטרנט ונסו שוב.'}}}
+export const requestOfflineBundle=()=>message('CACHE_BUNDLE');
+export const checkOfflineStatus=()=>message('BUNDLE_STATUS');

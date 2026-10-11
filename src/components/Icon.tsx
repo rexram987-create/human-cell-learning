@@ -1,0 +1,3 @@
+import {BookOpen,Scan,Workflow,Users,Sparkles,ArrowLeft,Check,Menu,Search,ChevronLeft,Play,Pause,RotateCcw,Settings,Download,ExternalLink,GraduationCap,CheckCircle,Lightbulb,ZoomIn,ZoomOut,Atom,Microscope,ShieldCheck,WifiOff,Sun,Moon} from 'lucide-react';
+const icons={BookOpen,Scan,Workflow,Users,Sparkles,ArrowLeft,Check,Menu,Search,ChevronLeft,Play,Pause,RotateCcw,Settings,Download,ExternalLink,GraduationCap,CheckCircle,Lightbulb,ZoomIn,ZoomOut,Atom,Microscope,ShieldCheck,WifiOff,Sun,Moon};
+export function Icon({name,size=22}:{name:string;size?:number}){const Component=icons[name as keyof typeof icons]||Atom;return <Component size={size} aria-hidden="true" strokeWidth={1.65}/>}

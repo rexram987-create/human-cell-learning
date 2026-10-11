@@ -1,0 +1,4 @@
+import {test,expect,vi,afterEach} from 'vitest';
+afterEach(()=>{vi.unstubAllGlobals();vi.resetModules()});
+test('retries registration after a worker installation fails',async()=>{const reg={active:null,installing:{},waiting:null,addEventListener:vi.fn()};const register=vi.fn().mockResolvedValue(reg);vi.stubGlobal('navigator',{serviceWorker:{register}});const {registerPwa}=await import('../src/pwa/client');await registerPwa();reg.installing=null as any;await registerPwa();expect(register).toHaveBeenCalledTimes(2)});
+test('registration rejection can be retried',async()=>{const register=vi.fn().mockRejectedValueOnce(new Error('offline')).mockResolvedValue({active:{},addEventListener:vi.fn()});vi.stubGlobal('navigator',{serviceWorker:{register}});const {registerPwa}=await import('../src/pwa/client');await expect(registerPwa()).rejects.toThrow();await expect(registerPwa()).resolves.toBeUndefined();expect(register).toHaveBeenCalledTimes(2)});

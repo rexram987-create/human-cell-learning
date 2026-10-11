@@ -1,0 +1,2 @@
+import {assets} from '../content';
+export default function MedicalImage({id}:{id:string}){const a=assets.find(x=>x.id===id);return a?<figure className="medical-image"><div className="medical-image-canvas"><img src={a.path} alt={a.alt} loading="lazy"/></div><figcaption>{a.alt} · <a href={a.sourceUrl} target="_blank" rel="noreferrer">{a.creator}</a> · <a href={a.licenseUrl} target="_blank" rel="noreferrer">{a.license}</a><small>{a.changes}</small></figcaption></figure>:null}

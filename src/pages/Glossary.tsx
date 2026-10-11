@@ -1,0 +1,5 @@
+import {useState} from 'react';
+import {Link} from 'react-router-dom';
+import {glossary} from '../content';
+import {Icon} from '../components/Icon';
+export default function Glossary(){const [q,setQ]=useState('');const list=glossary.filter(g=>(g.term+' '+g.definition).includes(q.trim())).sort((a,b)=>a.term.localeCompare(b.term,'he'));return <section className="page-shell"><nav className="breadcrumbs"><Link to="/">בית</Link><span>/</span><span>מילון מושגים</span></nav><header className="page-heading"><div><span className="eyebrow">מילים גדולות, הסברים פשוטים</span><h1>מילון מושגים</h1><p>{glossary.length} מושגים שיעזרו להבין את עולם התא</p></div></header><label className="search-field"><Icon name="Search"/><input value={q} onChange={e=>setQ(e.target.value)} placeholder="איזה מושג לחפש?" aria-label="חיפוש במילון"/></label><div className="glossary-list">{list.map(g=><div className="glossary-item" key={g.id}><h2>{g.term}</h2><p>{g.definition}</p><Link to={'/lesson/'+g.lessonId}>לעמוד הלימוד ←</Link></div>)}</div>{!list.length&&<p>לא נמצא מושג מתאים. אפשר לנסות מילה אחרת.</p>}</section>}

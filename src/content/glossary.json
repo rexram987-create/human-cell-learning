@@ -1,0 +1,194 @@
+[
+  {
+    "id": "term-0",
+    "term": "תא",
+    "definition": "יחידת חיים שמבצעת פעולות בסיסיות.",
+    "lessonId": "intro"
+  },
+  {
+    "id": "term-1",
+    "term": "רקמה",
+    "definition": "תאים והחומר שסביבם המאורגנים יחד.",
+    "lessonId": "tissues"
+  },
+  {
+    "id": "term-2",
+    "term": "איבר",
+    "definition": "מבנה בגוף המכיל כמה סוגי רקמות.",
+    "lessonId": "tissues"
+  },
+  {
+    "id": "term-3",
+    "term": "מיקרומטר",
+    "definition": "אלפית המילימטר.",
+    "lessonId": "scale"
+  },
+  {
+    "id": "term-4",
+    "term": "אברון",
+    "definition": "מבנה בתוך תא בעל תפקיד מסוים.",
+    "lessonId": "intro"
+  },
+  {
+    "id": "term-5",
+    "term": "קרום",
+    "definition": "מעטפת בררנית המפרידה בין סביבות.",
+    "lessonId": "membrane"
+  },
+  {
+    "id": "term-6",
+    "term": "ציטוזול",
+    "definition": "הרכיב הנוזלי של הציטופלזמה.",
+    "lessonId": "cytoplasm"
+  },
+  {
+    "id": "term-7",
+    "term": "ציטופלזמה",
+    "definition": "תוכן התא שמחוץ לגרעין.",
+    "lessonId": "cytoplasm"
+  },
+  {
+    "id": "term-8",
+    "term": "DNA",
+    "definition": "מולקולה שבה שמור מידע גנטי.",
+    "lessonId": "nucleus"
+  },
+  {
+    "id": "term-9",
+    "term": "גן",
+    "definition": "מקטע DNA שהמידע בו משמש ליצירת תוצר תפקודי.",
+    "lessonId": "nucleus"
+  },
+  {
+    "id": "term-10",
+    "term": "כרומוזום",
+    "definition": "מבנה של DNA וחלבונים.",
+    "lessonId": "division"
+  },
+  {
+    "id": "term-11",
+    "term": "RNA שליח",
+    "definition": "מולקולה המעבירה הוראות לריבוזום.",
+    "lessonId": "protein"
+  },
+  {
+    "id": "term-12",
+    "term": "חלבון",
+    "definition": "מולקולה הבנויה משרשרת חומצות אמינו.",
+    "lessonId": "protein"
+  },
+  {
+    "id": "term-13",
+    "term": "חומצת אמינו",
+    "definition": "יחידת בנייה של חלבונים.",
+    "lessonId": "ribosomes"
+  },
+  {
+    "id": "term-14",
+    "term": "אנזים",
+    "definition": "מולקולה המזרזת תגובה כימית; רבים מהאנזימים הם חלבונים.",
+    "lessonId": "lysosomes"
+  },
+  {
+    "id": "term-15",
+    "term": "ATP",
+    "definition": "מולקולה המשמשת להעברת אנרגיה בתא.",
+    "lessonId": "energy"
+  },
+  {
+    "id": "term-16",
+    "term": "גליקוליזה",
+    "definition": "תהליך פירוק גלוקוז בציטוזול.",
+    "lessonId": "energy"
+  },
+  {
+    "id": "term-17",
+    "term": "פעפוע",
+    "definition": "תנועה נטו של חומר במורד מפל הריכוזים.",
+    "lessonId": "transport"
+  },
+  {
+    "id": "term-18",
+    "term": "אוסמוזה",
+    "definition": "תנועה נטו של מים דרך קרום בררני.",
+    "lessonId": "transport"
+  },
+  {
+    "id": "term-19",
+    "term": "העברה פעילה",
+    "definition": "העברה נגד מפל באמצעות השקעת אנרגיה.",
+    "lessonId": "transport"
+  },
+  {
+    "id": "term-20",
+    "term": "קולטן",
+    "definition": "מבנה שמזהה מסר מתאים ומאפשר תגובה.",
+    "lessonId": "signaling"
+  },
+  {
+    "id": "term-21",
+    "term": "שלפוחית",
+    "definition": "שק קטן מוקף קרום המוביל או מכיל חומרים.",
+    "lessonId": "golgi"
+  },
+  {
+    "id": "term-22",
+    "term": "שעתוק",
+    "definition": "הכנת RNA על בסיס תבנית DNA.",
+    "lessonId": "protein"
+  },
+  {
+    "id": "term-23",
+    "term": "תרגום",
+    "definition": "הרכבת שרשרת חומצות אמינו לפי RNA.",
+    "lessonId": "ribosomes"
+  },
+  {
+    "id": "term-24",
+    "term": "מיטוזה",
+    "definition": "תהליך הפרדת חומר גנטי לשני גרעינים.",
+    "lessonId": "division"
+  },
+  {
+    "id": "term-25",
+    "term": "ציטוקינזיס",
+    "definition": "חלוקת גוף התא לשני תאים.",
+    "lessonId": "division"
+  },
+  {
+    "id": "term-26",
+    "term": "המוגלובין",
+    "definition": "חלבון בכדוריות דם אדומות שקושר חמצן.",
+    "lessonId": "rbc"
+  },
+  {
+    "id": "term-27",
+    "term": "סינפסה",
+    "definition": "אזור תקשורת בין תא עצב לתא אחר.",
+    "lessonId": "neuron"
+  },
+  {
+    "id": "term-28",
+    "term": "אקסון",
+    "definition": "שלוחה של תא עצב המעבירה אותות.",
+    "lessonId": "neuron"
+  },
+  {
+    "id": "term-29",
+    "term": "נוגדן",
+    "definition": "חלבון שיכול להיקשר למטרה מסוימת כחלק מתגובה חיסונית.",
+    "lessonId": "lymphocyte"
+  },
+  {
+    "id": "term-30",
+    "term": "סרקומר",
+    "definition": "יחידת התכווצות בשריר משורטט.",
+    "lessonId": "skeletal"
+  },
+  {
+    "id": "term-31",
+    "term": "קטלאז",
+    "definition": "אנזים המסייע בפירוק מי חמצן.",
+    "lessonId": "peroxisomes"
+  }
+]

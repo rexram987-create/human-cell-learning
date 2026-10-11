@@ -1,0 +1,30 @@
+[
+  {
+    "id": "basics",
+    "title": "מתחילים בתא",
+    "description": "היכרות, קנה מידה והקשר לגוף שלם",
+    "icon": "Sparkles",
+    "color": "blue"
+  },
+  {
+    "id": "structure",
+    "title": "מבנה התא",
+    "description": "מגלים את האברונים ואת העבודה של כל אחד",
+    "icon": "Scan",
+    "color": "purple"
+  },
+  {
+    "id": "processes",
+    "title": "התא בפעולה",
+    "description": "אנרגיה, חלבונים, תקשורת וחלוקה",
+    "icon": "Workflow",
+    "color": "teal"
+  },
+  {
+    "id": "cells",
+    "title": "תאים בגוף",
+    "description": "איך הצורה והמבנה מתאימים לתפקיד",
+    "icon": "Users",
+    "color": "rose"
+  }
+]

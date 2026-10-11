@@ -1,0 +1,3 @@
+import {sources} from '../content';
+import {Icon} from './Icon';
+export default function SourceList({sourceIds}:{sourceIds:string[]}){return <section className="source-list"><h2><Icon name="ShieldCheck"/> מקורות המידע</h2><p className="muted">התוכן נכתב ועובד בשפה פשוטה ונבדק מול המקורות הבאים ב־11.10.2026.</p>{sourceIds.map(id=>{const s=sources.find(s=>s.id===id);return s&&<div className="source-row" key={id}><a href={s.url} target="_blank" rel="noreferrer" dir="ltr">{s.title}<Icon name="ExternalLink" size={15}/></a>{s.kind==='wikipedia'&&s.revisionUrl&&<a href={s.revisionUrl} target="_blank" rel="noreferrer" className="revision-link">הגרסה שנבדקה</a>}</div>})}<small>קישורים למקורות חיצוניים דורשים חיבור לאינטרנט.</small></section>}
